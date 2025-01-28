@@ -4,7 +4,7 @@ import { useState } from "react";
 import { getScaleNames } from "@/lib/scales";
 import styles from "./css/SearchList.module.css";
 
-export default function SearchList() {
+export default function SearchList({ onSelect }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const data = getScaleNames();
@@ -30,12 +30,12 @@ export default function SearchList() {
 
     setQuery(value);
     setResults(filteredResults);
-    console.log(results);
   }
 
   function handleItemClick(item) {
     setQuery(item);
     setResults([]);
+    onSelect(item);
   }
 
   return (

@@ -1,10 +1,8 @@
-"use client";
-
+import { getFretboardNotes } from "@/lib/notes";
 import styles from "./css/Fretboard.module.css";
-import { getScale } from "@/lib/scales";
 
-export default function Fretboard({ notes }) {
-  const scale = getScale("C", "major");
+export default function Fretboard({ scale }) {
+  const notes = getFretboardNotes();
   const names = scale.map((note) => note.name[0]);
 
   return (
@@ -12,7 +10,9 @@ export default function Fretboard({ notes }) {
       <div className={styles.fretboard}>
         {notes.map((note, index) => {
           const name = note.name[0];
-          const inScale = names.find((n) => n === name);
+          let inScale = names.find((n) => n === name);
+
+          if (scale.length === 0) inScale = true;
 
           return (
             <div
@@ -22,7 +22,6 @@ export default function Fretboard({ notes }) {
                   ? `${styles.note}`
                   : `${styles.note} ${styles.fadednote}`
               }
-              onClick={() => console.log(name)}
             >
               {name}
             </div>
