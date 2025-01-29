@@ -9,12 +9,12 @@
   margin-bottom: 4rem;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .note {
-  width: 3rem;
-  height: 3rem;
+  width: 3.2rem;
+  height: 3.2rem;
   margin-bottom: 1rem;
   background-color: transparent;
   border: 2px solid white;
@@ -26,5 +26,14 @@
 }
 
 .fadednote {
-  opacity: .1;
+  opacity: 0.2;
+}
+
+.note:nth-child(1),
+.note:nth-child(2),
+.note:nth-child(3),
+.note:nth-child(4),
+.note:nth-child(5),
+.note:nth-child(6) {
+  background-color: #444;
 }
