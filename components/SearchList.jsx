@@ -38,14 +38,23 @@ export default function SearchList({ onSelect }) {
     onSelect(item);
   }
 
+  function handleClearClick() {
+    setQuery("");
+    setResults([]);
+    onSelect("");
+  }
+
   return (
     <div className={`${styles.searchlist}`}>
-      <input
-        type="text"
-        value={query}
-        onChange={handleInputChange}
-        placeholder="Scale..."
-      />
+      <div>
+        <input
+          type="text"
+          value={query}
+          onChange={handleInputChange}
+          placeholder="Scale..."
+        />
+        {query != "" && <button onClick={() => handleClearClick()}>X</button>}
+      </div>
       <ul>
         {results.map((item, index) => {
           return (

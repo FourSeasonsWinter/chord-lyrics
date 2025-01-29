@@ -9,12 +9,16 @@ export default function Page() {
   const [scale, setScale] = useState([]);
 
   function handleScaleSelection(scaleName) {
+    if (scaleName === "") {
+      setScale([]);
+      return;
+    }
+
     const values = scaleName.split(" ");
     const note = values[0];
     let type = values[1];
 
-    if (values.length > 2)
-      type = type + " " + values[2];
+    if (values.length > 2) type = type + " " + values[2];
 
     const scale = getScale(note, type);
 

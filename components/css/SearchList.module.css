@@ -16,6 +16,16 @@
   font-size: x-large;
 }
 
+.searchlist button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  opacity: .45;
+  position: absolute;
+  margin-left: 1rem;
+}
+
 .searchlist li {
   list-style: none;
   width: 200px;
