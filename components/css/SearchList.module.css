@@ -1,0 +1,38 @@
+.searchlist {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+.searchlist input {
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #222;
+  outline: none;
+  background-color: transparent;
+  font-size: x-large;
+}
+
+.searchlist button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  opacity: .45;
+  position: absolute;
+  margin-left: 1rem;
+}
+
+.searchlist li {
+  list-style: none;
+  width: 200px;
+  background-color: #222;
+  padding: .6rem 2rem;
+}
+
+.searchlist li:last-of-type {
+  border-radius: 0px 0px 10px 10px;
+}
