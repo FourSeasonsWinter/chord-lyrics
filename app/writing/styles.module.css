@@ -1,0 +1,12 @@
+.page {
+  min-height: 100vh;
+  padding-bottom: 40vh;
+}
+
+.page button {
+  height: 3rem;
+  border: none;
+  border-left: 1px solid white;
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+}
