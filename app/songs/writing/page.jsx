@@ -8,20 +8,24 @@ import Image from "next/image";
 export default function Page() {
   const [lineAmount, setLineAmount] = useState([1]);
 
-  const title = useRef(null);
-  const artist = useRef(null);
-  const key = useRef(null);
-  const tempo = useRef(null);
+  const [title, setTitle] = useState("");
+  const [artist, setArtist] = useState("");
+  const [key, setKey] = useState("");
+  const [tempo, setTempo] = useState("");
 
-  function handleSave() {
-    const song = {
-      title: title.current.value,
-      artist: artist.current.value,
-      key: key.current.value,
-      tempo: tempo.current.value
-    }
+  async function handleSave() {
+    if (!title || !artist) return;
 
-    console.log(song)
+    const res = await fetch("http://localhost:5000/data", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title, artist }),
+    });
+
+    const data = await res.json();
+    console.log(JSON.stringify(data, null, 2))
   }
 
   return (
@@ -31,17 +35,29 @@ export default function Page() {
           type="text"
           className={styles.songTitle}
           placeholder="Song title"
-          ref={title}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
         <input
           type="text"
           className={styles.artist}
           placeholder="Artist"
-          ref={artist}
+          value={artist}
+          onChange={(e) => setArtist(e.target.value)}
         />
         <div className={styles.extraInfo}>
-          <input type="text" placeholder="key" ref={key} />
-          <input type="number" placeholder="tempo" ref={tempo} />
+          <input
+            type="text"
+            placeholder="key"
+            value={key}
+            onChange={(e) => setKey(e.target.value)}
+          />
+          <input
+            type="number"
+            placeholder="tempo"
+            value={tempo}
+            onChange={(e) => setTempo(e.target.value)}
+          />
         </div>
       </div>
 
