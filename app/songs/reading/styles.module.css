@@ -1,0 +1,24 @@
+.page {
+  padding: .6rem;
+}
+
+.songInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.songInfo h2 {
+  padding-top: .5rem;
+  opacity: .8;
+}
+
+.songInfo h5 {
+  opacity: .8;
+  padding-top: .7rem;
+}
+
+.page hr {
+  margin: 2rem 0;
+  opacity: .2;
+}
