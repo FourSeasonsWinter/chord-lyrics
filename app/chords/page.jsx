@@ -23,6 +23,20 @@ export default function Page() {
           barres={CMajor.barres}
         />
       </div>
+      <div className={styles.diagram}>
+        <Chord
+          name={FMajor.name}
+          frets={FMajor.frets}
+          barres={FMajor.barres}
+        />
+      </div>
+      <div className={styles.diagram}>
+        <Chord
+          name={CMajor.name}
+          frets={CMajor.frets}
+          barres={CMajor.barres}
+        />
+      </div>
     </main>
   )
 }
