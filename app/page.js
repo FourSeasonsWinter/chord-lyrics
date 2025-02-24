@@ -9,7 +9,6 @@ export default function Home() {
         <Link href="/songs" className={styles.link}>Songs</Link>
         <Link href="/songs/writing" className={styles.link}>Writing</Link>
         <Link href="/songs/reading" className={styles.link}>Reading</Link>
-        <Link href="/chords" className={styles.link}>Chords</Link>
       </div>
     </>
   );

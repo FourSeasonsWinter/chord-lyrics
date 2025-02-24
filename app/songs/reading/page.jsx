@@ -2,7 +2,7 @@ import LineRead from "@/components/LineRead";
 import styles from "./styles.module.css";
 
 export default async function Page() {
-  const res = await fetch("http://localhost:5000/data");
+  const res = await fetch("http://localhost:8080/song");
   const songs = await res.json();
   const song = songs[0]
 

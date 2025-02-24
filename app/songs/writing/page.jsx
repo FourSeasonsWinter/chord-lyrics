@@ -16,7 +16,7 @@ export default function Page() {
   async function handleSave() {
     if (!title || !artist) return;
 
-    const res = await fetch("http://localhost:5000/data", {
+    const res = await fetch("http://localhost:8080/song", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
