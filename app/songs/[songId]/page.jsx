@@ -41,11 +41,13 @@ export default async function Page({ params }) {
         </div>
       </div>
       <hr />
-      {lines.map((line, index) => {
-        return (
-          <LineRead key={index} chords={line.chords} lyrics={line.lyrics} />
-        );
-      })}
+      <div className={styles.lines}>
+        {lines.map((line, index) => {
+          return (
+            <LineRead key={index} chords={line.chords} lyrics={line.lyrics} />
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -1,11 +1,8 @@
-.page {
-  padding: .6rem;
-}
-
 .songInfo {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.6rem;
 }
 
 .songInfo h2 {
@@ -19,8 +16,14 @@
 }
 
 .page hr {
-  margin: 2rem 0;
+  margin: 2rem .6rem;
   opacity: .2;
+}
+
+.lines {
+  overflow-x: scroll;
+  min-height: 100vh;
+  padding: 0 0.4rem;
 }
 
 .notFound {

@@ -1,5 +1,5 @@
 .line {
-  margin: 2rem 0;
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
 }
@@ -13,7 +13,7 @@
 
 .chords {
   color: cyan;
-  margin-bottom: 1rem;
+  margin-bottom: .3rem;
 }
 
 .editmode {
