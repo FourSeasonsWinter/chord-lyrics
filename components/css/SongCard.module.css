@@ -1,0 +1,21 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  padding: 1rem;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 4 4px 2px #00ffff;
+}
+
+.card strong {
+  font-size: large;
+  text-overflow: ellipsis;
+}
+
+.card span {
+  color: #555;
+  text-overflow: ellipsis;
+}

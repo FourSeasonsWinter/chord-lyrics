@@ -1,8 +1,9 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: .6rem;
+  gap: 0.6rem;
 }
+
 .list li {
   list-style: none;
 }

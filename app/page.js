@@ -1,15 +1,17 @@
-import Link from "next/link";
+import SignInSection from "@/components/SingInSection";
 import styles from "./page.module.css";
+import PopularSongs from "@/components/PopularSongs";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <h1 className={styles.title}>Home</h1>
-      <div className={styles.links}>
-        <Link href="/songs" className={styles.link}>Songs</Link>
-        <Link href="/songs/writing" className={styles.link}>Writing</Link>
-        <Link href="/songs/reading" className={styles.link}>Reading</Link>
-      </div>
+      <h1 className={styles.title}>Chord Lyrics</h1>
+      <p className={styles.paragraph}><b>Read</b> and <b>Write</b> songs with chords.</p>
+
+      <PopularSongs />
+      <SignInSection />
+      <Footer />
     </>
   );
 }

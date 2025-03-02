@@ -1,0 +1,24 @@
+.signIn {
+  padding: 0 1rem;
+}
+
+.signIn h2 {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.signIn div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.signIn span {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: white;
+  color: black;
+  box-shadow: 4 4 2 cyan;
+  border: 1px solid #ccc;
+}

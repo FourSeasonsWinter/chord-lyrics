@@ -1,0 +1,18 @@
+.heading {
+  padding: 0 1rem;
+}
+
+.songs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: .8rem;
+  margin-top: 1rem;
+}
+
+.songs li {
+  list-style: none;
+  text-align: center;
+  text-decoration: underline;
+}

@@ -16,6 +16,8 @@ export default function Page() {
 
   const router = useRouter()
 
+  const userId = 1 // temporary
+
   async function handleSave() {
     if (!title || !artist) return;
 
@@ -24,7 +26,7 @@ export default function Page() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title, artist }),
+      body: JSON.stringify({ title, artist, userId }),
     });
 
     const data = await res.json();
