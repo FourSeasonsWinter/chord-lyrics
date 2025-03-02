@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import styles from "./styles.module.css";
 import LineWrite from "@/components/LineWrite";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   const [lineAmount, setLineAmount] = useState([1]);
@@ -12,6 +13,8 @@ export default function Page() {
   const [artist, setArtist] = useState("");
   const [key, setKey] = useState("");
   const [tempo, setTempo] = useState("");
+
+  const router = useRouter()
 
   async function handleSave() {
     if (!title || !artist) return;
@@ -25,6 +28,7 @@ export default function Page() {
     });
 
     const data = await res.json();
+    router.push('/songs')
     console.log(JSON.stringify(data, null, 2))
   }
 

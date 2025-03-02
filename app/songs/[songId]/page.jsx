@@ -1,10 +1,21 @@
 import LineRead from "@/components/LineRead";
 import styles from "./styles.module.css";
+import Link from "next/link";
 
-export default async function Page() {
-  const res = await fetch("http://localhost:8080/song");
-  const songs = await res.json();
-  const song = songs[0]
+export default async function Page({ params }) {
+  const songId = (await params).songId;
+
+  const result = await fetch(`http://localhost:8080/song/${songId}`);
+
+  if (result.status === 404)
+    return (
+      <div className={styles.notFound}>
+        <h2>song not found</h2>
+        <Link href="/songs">back to song list</Link>
+      </div>
+    );
+
+  const song = await result.json();
 
   const lines = [
     {
