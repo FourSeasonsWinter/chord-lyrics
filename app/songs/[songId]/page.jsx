@@ -5,7 +5,7 @@ import Link from "next/link";
 export default async function Page({ params }) {
   const songId = (await params).songId;
 
-  const result = await fetch(`http://localhost:8080/song/${songId}`);
+  const result = await fetch(`${process.env.NEXT_PUBLIC_SONGS_URL}/${songId}`);
 
   if (result.status === 404)
     return (

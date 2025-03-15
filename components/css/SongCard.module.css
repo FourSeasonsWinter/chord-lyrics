@@ -12,10 +12,14 @@
 
 .card strong {
   font-size: large;
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .card span {
   color: #555;
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }

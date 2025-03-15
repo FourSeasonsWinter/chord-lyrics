@@ -11,7 +11,7 @@ export default function PopularSongs() {
 
   useEffect(() => {
     async function fetchSongs() {
-      const result = await fetch("http://localhost:8080/song");
+      const result = await fetch(`${process.env.NEXT_PUBLIC_SONGS_URL}`);
       const json = await result.json();
 
       setSongs(json.slice(0, 6));

@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <h1 className={styles.title}>Chord Lyrics</h1>
-      <p className={styles.paragraph}><b>Read</b> and <b>Write</b> songs with chords.</p>
+      <p className={styles.paragraph}></p>
 
       <PopularSongs />
       <SignInSection />
