@@ -1,0 +1,21 @@
+.header {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header button {
+  border: none;
+  background-color: transparent;
+  font-size: medium;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.paragraph {
+  margin-bottom: 3rem;
+}
