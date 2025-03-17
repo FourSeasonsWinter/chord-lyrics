@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./styles.module.css";
-import LineWrite from "@/components/LineWrite";
+import LineWrite from "@/app/songs/writing/LineWrite";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 

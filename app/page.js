@@ -1,7 +1,7 @@
-import SignInSection from "@/components/SingInSection";
+import SignInSection from "@/app/components/SingInSection";
 import styles from "./page.module.css";
-import PopularSongs from "@/components/PopularSongs";
-import Footer from "@/components/Footer";
+import PopularSongs from "@/app/components/PopularSongs";
+import Footer from "@/app/components/Footer";
 
 export default function Home() {
   return (

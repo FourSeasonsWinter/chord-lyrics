@@ -1,8 +1,7 @@
 "use client";
 
 import { roboto } from "@/app/fonts";
-import styles from "./css/Line.module.css";
-import { useState } from "react";
+import styles from "../Line.module.css";
 
 export default function LineWrite() {
   return (

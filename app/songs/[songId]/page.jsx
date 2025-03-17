@@ -1,4 +1,4 @@
-import LineRead from "@/components/LineRead";
+import LineRead from "./LineRead";
 import styles from "./styles.module.css";
 import Link from "next/link";
 

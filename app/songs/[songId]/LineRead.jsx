@@ -1,4 +1,4 @@
-import styles from "./css/Line.module.css"
+import styles from "../Line.module.css"
 import { roboto } from "@/app/fonts"
 
 export default function LineRead({ chords, lyrics }) {
