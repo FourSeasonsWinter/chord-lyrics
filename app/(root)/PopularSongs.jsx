@@ -1,5 +1,5 @@
 import styles from "./PopularSongs.module.css";
-import SongCard from "@/app/components/SongCard";
+import SongCard from "@/components/SongCard";
 
 export default async function PopularSongs() {
   const result = await fetch(`${process.env.NEXT_PUBLIC_SONGS_URL}`, { next: { revalidate: 3600 }});

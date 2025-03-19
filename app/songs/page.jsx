@@ -1,11 +1,12 @@
 import SongList from "@/app/songs/SongList";
-import styles from "./styles.module.css"
+import SearchForm from "@/components/SearchForm";
 
 export default function Page() {
   return (
-    <div className={styles.songs}>
-      <h1>Songs</h1>
+    <>
+      <h1 style={{padding: 1 + "rem"}}>Songs</h1>
+      <SearchForm query={""} />
       <SongList />
-    </div>
+    </>
   )
 }

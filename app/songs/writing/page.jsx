@@ -31,7 +31,6 @@ export default function Page() {
 
     const data = await res.json();
     router.push('/songs')
-    console.log(JSON.stringify(data, null, 2))
   }
 
   return (
