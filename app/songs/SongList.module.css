@@ -8,3 +8,9 @@
 .list li {
   list-style: none;
 }
+
+.title {
+  font-size: x-large;
+  margin-left: 1rem;
+  margin-bottom: 1.8rem;
+}

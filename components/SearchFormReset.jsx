@@ -13,7 +13,7 @@ export default function SearchFormReset() {
 
   return (
     <button type="reset" onClick={reset} className={styles.button}>
-      <Link href="/">
+      <Link href="/songs">
         <img src="close.png" alt="clear" width={24} height={24} />
       </Link>
     </button>
