@@ -14,7 +14,7 @@ export default async function PopularSongs() {
         {songs.map((song) => {
           return (
             <li key={song.id}>
-              <SongCard id={song.id} title={song.title} artist={song.artist} />
+              <SongCard song={song} />
             </li>
           );
         })}

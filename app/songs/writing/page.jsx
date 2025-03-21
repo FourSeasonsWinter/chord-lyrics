@@ -4,9 +4,13 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 import LineWrite from "@/app/songs/writing/LineWrite";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { auth } from "@/auth";
+import { redirect } from "next/dist/server/api-utils";
 
-export default function Page() {
+export default async function Page() {
+  const session = await auth();
+  if (!session) redirect("/")
+
   const [lineAmount, setLineAmount] = useState([1]);
 
   const [title, setTitle] = useState("");
@@ -14,14 +18,11 @@ export default function Page() {
   const [key, setKey] = useState("");
   const [tempo, setTempo] = useState("");
 
-  const router = useRouter()
-
-  const userId = 1 // temporary
-
   async function handleSave() {
     if (!title || !artist) return;
+    const userId = 1 // temporary
 
-    const res = await fetch("http://localhost:8080/song", {
+    const res = await fetch(process.env.NEXT_PUBLIC_SONGS_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +31,7 @@ export default function Page() {
     });
 
     const data = await res.json();
-    router.push('/songs')
+    redirect("/songs")
   }
 
   return (
