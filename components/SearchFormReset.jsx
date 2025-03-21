@@ -5,7 +5,6 @@ import styles from "./css/SearchForm.module.css";
 
 export default function SearchFormReset() {
   function reset() {
-    console.log("reset");
     const form = document.querySelector(".search-form");
 
     if (form) form.reset();

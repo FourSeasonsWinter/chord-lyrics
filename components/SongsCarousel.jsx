@@ -1,11 +1,16 @@
-import SongCard from "./SongCard"
+import SongCard from "./SongCard";
+import styles from "./css/SongsCarousel.module.css";
 
 export default function SongsCarousel({ songs }) {
   return (
-    <div>
-      {songs.map(song => {
-        <SongCard song={song} />
+    <ol className={styles.carousel}>
+      {songs.map((song) => {
+        return (
+          <li key={song.id}>
+            <SongCard song={song} />
+          </li>
+        );
       })}
-    </div>
-  )
+    </ol>
+  );
 }

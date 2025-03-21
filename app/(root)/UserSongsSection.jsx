@@ -3,7 +3,7 @@ import styles from "./UserSongsSection.module.css";
 import SongsCarousel from "@/components/SongsCarousel";
 
 export default async function UserSongsSection(id) {
-  const result = await fetch(`${process.env.NEXT_PUBLIC_SONGS_URL}/user/${id}`);
+  const result = await fetch(`${process.env.NEXT_PUBLIC_SONGS_URL}/user/1`);
   const userSongs = await result.json();
 
   return (

@@ -6,8 +6,10 @@ import SearchForm from "@/components/SearchForm";
 import Link from "next/link";
 import UserSongsSection from "./UserSongsSection";
 
-export default async function Home({ searchParams }) {
+export default async function Home() {
   const session = await auth();
+  if (session)
+    console.log(session.id)
   
   return (
     <>
