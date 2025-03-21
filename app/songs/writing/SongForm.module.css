@@ -1,0 +1,54 @@
+.title {
+  padding: 0.6rem;
+  opacity: 0.3;
+}
+
+.page {
+  min-height: 100vh;
+  padding-bottom: 40vh;
+}
+
+.songDetails {
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.songDetails input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #ccc;
+}
+
+.songTitle {
+  font-size: 1.6rem;
+  width: 60vw;
+}
+
+.artist {
+  width: 60vw;
+  font-size: 1.2rem;
+  color: #ddd;
+  margin-top: 1rem;
+}
+
+.addButton {
+  height: 3rem;
+  border: none;
+  border-left: 1px solid white;
+  background: linear-gradient(to right, #444, #222);
+  padding: 1rem 2rem;
+}
+
+.saveButton {
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  color: white;
+  position: fixed;
+  bottom: 30;
+  right: 20;
+}

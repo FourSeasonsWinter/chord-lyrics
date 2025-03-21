@@ -1,7 +1,7 @@
-import Link from "next/link";
 import styles from "./css/Navbar.module.css";
 import { auth, signOut, signIn } from "@/auth";
-import { montserrat } from "../fonts";
+import { montserrat } from "@/app/fonts";
+import Image from "next/image";
 
 export default async function Navbar() {
   const session = await auth();
@@ -9,10 +9,6 @@ export default async function Navbar() {
   return (
     <header>
       <nav className={styles.header}>
-        <Link href="/">
-          <h1 className={styles.title}>Chord Lyrics</h1>
-        </Link>
-
         {session && session?.user ? (
           <>
             <form
@@ -21,7 +17,9 @@ export default async function Navbar() {
                 await signOut();
               }}
             >
-              <button className={montserrat.className} type="submit">{session?.user?.name}</button>
+              <button className={montserrat.className} type="submit">
+                <Image src="/logo.png" alt="user image" width={48} height={48} className={styles.image} />
+              </button>
             </form>
           </>
         ) : (
@@ -36,7 +34,6 @@ export default async function Navbar() {
         )}
       </nav>
 
-      <p className={styles.paragraph}></p>
     </header>
   );
 }

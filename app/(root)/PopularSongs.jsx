@@ -1,5 +1,5 @@
 import styles from "./PopularSongs.module.css";
-import SongCard from "@/app/components/SongCard";
+import SongCard from "@/components/SongCard";
 
 export default async function PopularSongs() {
   const result = await fetch(`${process.env.NEXT_PUBLIC_SONGS_URL}`, { next: { revalidate: 3600 }});
@@ -14,7 +14,7 @@ export default async function PopularSongs() {
         {songs.map((song) => {
           return (
             <li key={song.id}>
-              <SongCard id={song.id} title={song.title} artist={song.artist} />
+              <SongCard song={song} />
             </li>
           );
         })}

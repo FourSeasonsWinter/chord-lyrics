@@ -1,46 +1,26 @@
-"use client";
+import styles from "./SongList.module.css";
+import SongListItem from "./SongListItem";
 
-import { useEffect, useState } from "react";
-import styles from "./css/SongList.module.css";
-import { useRouter } from "next/navigation";
+export default async function SongList({ search }) {
+  const result =
+    search === undefined
+      ? await fetch(process.env.NEXT_PUBLIC_SONGS_URL)
+      : await fetch(`${process.env.NEXT_PUBLIC_SONGS_URL}/query/${search}`)
 
-export default function SongList({ search = "" }) {
-  const [songs, setSongs] = useState([]);
-  const router = useRouter();
-
-  useEffect(() => {
-    async function fetchSongs() {
-      const result = await fetch("http://localhost:8080/song");
-      const json = await result.json();
-
-      if (search.trim() != "") {
-        // filter songs
-      }
-
-      setSongs(json);
-    }
-
-    fetchSongs();
-  });
-
-  function handleRedirect(songId) {
-    router.push(`/songs/${songId}`);
-  }
+  const songs = await result.json();
 
   return (
-    <ol className={styles.list}>
-      {songs.map((song) => {
-        return (
-          <li
-            key={song.id}
-            onClick={() => {
-              handleRedirect(song.id);
-            }}
-          >
-            {song.title}
-          </li>
-        );
-      })}
-    </ol>
+    <>
+      {search && <h3 className={styles.title}>Results</h3>}
+      <ol className={styles.list}>
+        {songs.map((song) => {
+          return (
+            <li key={song.id}>
+              <SongListItem song={song} />
+            </li>
+          );
+        })}
+      </ol>
+    </>
   );
 }

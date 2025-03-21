@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
-import { montserrat } from "../fonts";
+import { montserrat } from "@/app/fonts";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Chord Lyrics",

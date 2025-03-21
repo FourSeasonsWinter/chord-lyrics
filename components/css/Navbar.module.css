@@ -1,0 +1,12 @@
+.header button {
+  border: none;
+  background-color: transparent;
+  font-size: medium;
+  position: absolute;
+  right: 0;
+  padding: 1rem;
+}
+
+.image {
+  border-radius: 50%;
+}

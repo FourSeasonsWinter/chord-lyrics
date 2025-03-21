@@ -4,7 +4,6 @@ import Link from "next/link";
 
 export default async function Page({ params }) {
   const songId = (await params).songId;
-
   const result = await fetch(`${process.env.NEXT_PUBLIC_SONGS_URL}/${songId}`);
 
   if (result.status === 404)
@@ -16,6 +15,7 @@ export default async function Page({ params }) {
     );
 
   const song = await result.json();
+  const { title, artist } = song;
 
   const lines = [
     {
@@ -32,8 +32,8 @@ export default async function Page({ params }) {
     <div className={styles.page}>
       <div className={styles.songInfo}>
         <div>
-          <h1>{song.title}</h1>
-          <h2>{song.artist}</h2>
+          <h1>{title}</h1>
+          <h2>{artist}</h2>
         </div>
         <div>
           <h5 dir="rtl">C Major</h5>
