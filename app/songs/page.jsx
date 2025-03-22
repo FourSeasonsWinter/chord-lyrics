@@ -6,9 +6,9 @@ export default async function Page({ searchParams }) {
 
   return (
     <>
-      <h1 style={{padding: 1 + "rem"}}>Songs</h1>
+      <h1 style={{ padding: 1 + "rem" }}>Songs</h1>
       <SearchForm query={query} />
       <SongList search={query || undefined} />
     </>
-  )
+  );
 }

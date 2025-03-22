@@ -13,20 +13,12 @@ export default async function Page({ params }) {
         <Link href="/songs">back to song list</Link>
       </div>
     );
+  
+  const lyricsRes = await fetch(`${process.env.NEXT_PUBLIC_LYRICS_URL}/${songId}`)
 
+  const lines = await lyricsRes.json();
   const song = await result.json();
   const { title, artist } = song;
-
-  const lines = [
-    {
-      chords: "C                         F",
-      lyrics: "Nothing's gonna change my love for you, you oughta",
-    },
-    {
-      chords: "A",
-      lyrics: "We're talking away",
-    },
-  ];
 
   return (
     <div className={styles.page}>
@@ -40,7 +32,7 @@ export default async function Page({ params }) {
       <div className={styles.lines}>
         {lines.map((line, index) => {
           return (
-            <LineRead key={index} chords={line.chords} lyrics={line.lyrics} />
+            <LineRead key={index} chords={line.chords_text} lyrics={line.lyric_text} />
           );
         })}
       </div>
