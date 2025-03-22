@@ -1,6 +1,6 @@
 .carousel {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   list-style: none;
   padding: 1rem;
   overflow-x: scroll;

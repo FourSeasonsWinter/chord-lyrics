@@ -42,7 +42,7 @@ export default async function Page() {
       return;
     }
 
-    console.log("saved!")
+    redirect(`/songs/${songId}`)
   }
 
   return (

@@ -35,10 +35,6 @@ export default async function Page({ params }) {
           <h1>{title}</h1>
           <h2>{artist}</h2>
         </div>
-        <div>
-          <h5 dir="rtl">C Major</h5>
-          <h5>120 bpm</h5>
-        </div>
       </div>
       <hr />
       <div className={styles.lines}>

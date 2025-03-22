@@ -1,6 +1,7 @@
 import { montserrat } from "@/app/fonts";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Chord Lyrics",
@@ -11,8 +12,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <Navbar />
         {children}
+        <Footer />
+        <Navbar />
       </body>
     </html>
   );

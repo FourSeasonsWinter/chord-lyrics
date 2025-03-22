@@ -1,10 +1,19 @@
+.header {
+  width: 100vw;
+  height: 6vh;
+  background: linear-gradient(to top, #233, black);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1rem;
+}
+
 .header button {
   border: none;
   background-color: transparent;
   font-size: medium;
-  position: absolute;
-  right: 0;
-  padding: 1rem;
 }
 
 .image {

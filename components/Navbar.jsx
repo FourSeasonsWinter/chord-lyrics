@@ -2,38 +2,55 @@ import styles from "./css/Navbar.module.css";
 import { auth, signOut, signIn } from "@/auth";
 import { montserrat } from "@/app/fonts";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Navbar() {
   const session = await auth();
 
   return (
-    <header>
-      <nav className={styles.header}>
-        {session && session?.user ? (
-          <>
-            <form
-              action={async () => {
-                "use server";
-                await signOut();
-              }}
-            >
-              <button className={montserrat.className} type="submit">
-                <Image src="/logo.png" alt="user image" width={48} height={48} className={styles.image} />
-              </button>
-            </form>
-          </>
-        ) : (
-          <form
-            action={async () => {
-              "use server";
-              await signIn("github");
-            }}
-          >
-            <button className={montserrat.className} type="submit">Login</button>
-          </form>
-        )}
-      </nav>
+    <nav className={styles.header}>
+      <Link href="/">
+        <Image src="/home.png" alt="to home" width={28} height={28} />
+      </Link>
 
-    </header>
+      <Link href="/songs/writing">
+        <Image src="/write.png" alt="write song" width={28} height={28} />
+      </Link>
+
+      {session && session?.user ? (
+        <form
+          action={async () => {
+            "use server";
+            await signOut();
+          }}
+        >
+          <button className={montserrat.className} type="submit">
+            <Image
+              src="/logo.png"
+              alt="to user profile"
+              width={36}
+              height={36}
+              className={styles.image}
+            />
+          </button>
+        </form>
+      ) : (
+        <form
+          action={async () => {
+            "use server";
+            await signIn("github");
+          }}
+        >
+          <button className={montserrat.className} type="submit">
+            <Image
+              src="/person.png"
+              alt="login"
+              width={28}
+              height={28}
+            />
+          </button>
+        </form>
+      )}
+    </nav>
   );
 }

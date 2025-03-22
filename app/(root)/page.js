@@ -8,8 +8,6 @@ import UserSongsSection from "./UserSongsSection";
 
 export default async function Home() {
   const session = await auth();
-  if (session)
-    console.log(session.id)
   
   return (
     <>
@@ -25,8 +23,6 @@ export default async function Home() {
       ) : (
         <SignInSection />
       )}
-
-      <Footer />
     </>
   );
 }
