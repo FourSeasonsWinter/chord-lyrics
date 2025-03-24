@@ -5,9 +5,20 @@
   padding: 0.6rem;
 }
 
+.songInfo h1 {
+  max-width: 90vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .songInfo h2 {
   padding-top: .5rem;
   opacity: .8;
+  max-width: 58vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .page hr {
@@ -29,4 +40,13 @@
   gap: 1rem;
   align-items: center;
   justify-content: center;
+}
+
+.editButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: .6rem;
+  border: none;
+  background: transparent;
 }

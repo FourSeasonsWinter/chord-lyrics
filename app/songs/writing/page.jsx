@@ -51,6 +51,7 @@ export default async function Page() {
 
   return (
     <>
+      <h1 style={{padding: .6 + "rem", opacity: .3}}>New song</h1>
       <SongForm onSongSubmit={handleSubmit} />
     </>
   );
