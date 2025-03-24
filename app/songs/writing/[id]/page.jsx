@@ -19,7 +19,7 @@ export default async function Page({ params }) {
   return (
     <>
       <h1 style={{padding: .6 + "rem", opacity: .3}}>Edit mode</h1>
-      <SongForm songToEdit={{details: song, lines: lyrics}} />
+      <SongForm  songToEdit={{details: song, lines: lyrics}} />
     </>
   );
 }

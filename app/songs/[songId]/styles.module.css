@@ -25,12 +25,12 @@
   margin-top: 2rem;
 }
 
-.songInfo div span {
+.usernameLabel {
   opacity: .4;
 }
 
 .username {
-  opacity: .8;
+  opacity: 1;
 }
 
 .page hr {

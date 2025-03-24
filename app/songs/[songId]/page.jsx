@@ -34,8 +34,8 @@ export default async function Page({ params }) {
         <h1>{song.title}</h1>
         <h2>{song.artist}</h2>
         <div>
-          <span>chord lyrics by</span>
-          <b className={styles.username}> {user.name}</b>
+          <span className={styles.usernameLabel}>chord lyrics by</span>
+          <span className={styles.username}> {user.name}</span>
         </div>
       </div>
       <hr />

@@ -6,7 +6,7 @@ import styles from "./SongForm.module.css";
 import Image from "next/image";
 import { montserrat } from "@/app/fonts";
 
-export default function SongForm({ onSongSubmit, songToEdit = undefined }) {
+export default function SongForm({ onSongSubmit, userId, songToEdit = undefined }) {
   const [lines, setLines] = useState([]);
   const [details, setDetails] = useState({
     title: "",
@@ -20,21 +20,18 @@ export default function SongForm({ onSongSubmit, songToEdit = undefined }) {
         artist: songToEdit.details.artist,
       });
 
-      setLines([]);
-
+      let newLines = [];
       for (const line of songToEdit.lines) {
         console.log(line);
-        setLines([
-          ...lines,
-          {
-            chords: line.chords_text,
-            lyrics: line.lyric_text,
-            lineNumber: line.line_number,
-          },
-        ]);
+        newLines.push({
+          chords: line.chords_text,
+          lyrics: line.lyric_text,
+        });
       }
+
+      setLines(newLines)
     } else {
-      setLines([{ chords: "", lyrics: "", lineNumber: 1 }])
+      setLines([{ chords: "", lyrics: "" }]);
     }
   }, []);
 
@@ -45,7 +42,7 @@ export default function SongForm({ onSongSubmit, songToEdit = undefined }) {
 
     setLines([
       ...lines,
-      { chords: "", lyrics: "", lineNumber: lines.length + 1 },
+      { chords: "", lyrics: "" },
     ]);
   }
 
@@ -69,7 +66,7 @@ export default function SongForm({ onSongSubmit, songToEdit = undefined }) {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    onSongSubmit(details, lines);
+    onSongSubmit(details, lines, userId);
   }
 
   return (
