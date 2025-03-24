@@ -9,7 +9,7 @@ export default async function UserSongsSection(id) {
   return (
     <>
       <h3 className={styles.title}>Your collection</h3>
-      {result.ok ? (
+      {result.ok && userSongs.length > 0 ? (
         <SongsCarousel songs={userSongs} />
       ) : (
         <div className={styles.linkContainer}>

@@ -24,12 +24,12 @@ export default async function Navbar() {
             await signOut();
           }}
         >
-          <button className={montserrat.className} type="submit">
+          <button className={montserrat.className}>
             <Image
-              src="/logo.png"
+              src={session.avatarUrl}
               alt="to user profile"
-              width={36}
-              height={36}
+              width={28}
+              height={28}
               className={styles.image}
             />
           </button>
@@ -42,12 +42,7 @@ export default async function Navbar() {
           }}
         >
           <button className={montserrat.className} type="submit">
-            <Image
-              src="/person.png"
-              alt="login"
-              width={28}
-              height={28}
-            />
+            <Image src="/person.png" alt="login" width={28} height={28} />
           </button>
         </form>
       )}

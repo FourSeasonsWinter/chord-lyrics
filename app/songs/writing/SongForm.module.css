@@ -18,7 +18,7 @@
 .songDetails input {
   border: none;
   outline: none;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 1px solid #555;
 }
 
 .songTitle {
@@ -35,20 +35,20 @@
 
 .addButton {
   height: 3rem;
-  border: none;
+  border: 1px solid #2f2f2f;
   border-left: 1px solid white;
-  background: linear-gradient(to right, #444, #222);
+  background: linear-gradient(to right, #2f2f2f, black);
   padding: 1rem 2rem;
 }
 
 .saveButton {
   border: 2px solid #ccc;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   background-color: transparent;
   color: white;
   position: fixed;
-  bottom: 30;
+  bottom: 44;
   right: 20;
 }

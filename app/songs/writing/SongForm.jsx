@@ -3,19 +3,27 @@
 import { useState } from "react";
 import LineWrite from "./LineWrite";
 import styles from "./SongForm.module.css";
+import Image from "next/image";
+import { montserrat } from "@/app/fonts";
 
 export default function SongForm({ onSongSubmit }) {
-  const [lines, setLines] = useState([{ chords: "", lyrics: "", lineNumber: 1 }]);
+  const [lines, setLines] = useState([
+    { chords: "", lyrics: "", lineNumber: 1 },
+  ]);
   const [details, setDetails] = useState({
     title: "",
     artist: "",
   });
 
-  let lineNumber = 1;
-
   function addLine() {
-    lineNumber += 1;
-    setLines([...lines, { chords: "", lyrics: "", lineNumber: lineNumber }]);
+    const lastLine = lines[lines.length - 1];
+
+    if (lastLine.chords === "" && lastLine.lyrics === "") return;
+
+    setLines([
+      ...lines,
+      { chords: "", lyrics: "", lineNumber: lines.length + 1 },
+    ]);
   }
 
   function handleDetailsChange(event) {
@@ -38,7 +46,7 @@ export default function SongForm({ onSongSubmit }) {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    onSongSubmit(details, lines)
+    onSongSubmit(details, lines);
   }
 
   return (
@@ -49,8 +57,8 @@ export default function SongForm({ onSongSubmit }) {
           name="title"
           value={details.title}
           onChange={handleDetailsChange}
-          className={styles.songTitle}
-          placeholder="Song title"
+          className={`${styles.songTitle} ${montserrat.className}`}
+          placeholder="Song title..."
           required
         />
         <input
@@ -58,8 +66,8 @@ export default function SongForm({ onSongSubmit }) {
           name="artist"
           value={details.artist}
           onChange={handleDetailsChange}
-          className={styles.artist}
-          placeholder="Artist"
+          className={`${styles.artist} ${montserrat.className}`}
+          placeholder="Artist..."
           required
         />
       </div>
@@ -82,7 +90,7 @@ export default function SongForm({ onSongSubmit }) {
       </button>
 
       <button type="submit" className={styles.saveButton}>
-        Done
+        <Image src="/check.png" alt="Done" width={24} height={24} />
       </button>
     </form>
   );

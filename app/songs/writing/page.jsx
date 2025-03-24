@@ -29,6 +29,10 @@ export default async function Page() {
     const songId = song.id;
 
     // save lyrics
+    const lastLine = lines[lines.length - 1];
+    if (lastLine.chords === "" && lastLine.lyrics === "")
+      lines = lines.slice(0, lines.length - 1);
+
     const response = await fetch(process.env.NEXT_PUBLIC_LYRICS_URL, {
       method: "POST",
       headers: {
