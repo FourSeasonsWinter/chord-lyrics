@@ -1,7 +1,7 @@
 .songInfo {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   padding: 0.6rem;
 }
 
@@ -21,8 +21,21 @@
   text-overflow: ellipsis;
 }
 
+.songInfo div {
+  margin-top: 2rem;
+}
+
+.songInfo div span {
+  opacity: .4;
+}
+
+.username {
+  opacity: .8;
+}
+
 .page hr {
   margin: 2rem .6rem;
+  margin-top: .2rem;
   opacity: .2;
 }
 

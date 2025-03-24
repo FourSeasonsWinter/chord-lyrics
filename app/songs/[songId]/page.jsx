@@ -17,23 +17,25 @@ export default async function Page({ params }) {
       </div>
     );
 
-  const lyricsRes = await fetch(
-    `${process.env.NEXT_PUBLIC_LYRICS_URL}/${songId}`
-  );
+  const lyricsRes = await fetch(`${process.env.NEXT_PUBLIC_LYRICS_URL}/${songId}`);
   const lines = await lyricsRes.json();
   const song = await songRes.json();
-  const { title, artist } = song;
 
   let canEdit = false;
   const session = await auth();
   if (session && session.id === song.user_id) canEdit = true;
 
+  const userRes = await fetch(`${process.env.NEXT_PUBLIC_USERS_URL}/${song.user_id}`)
+  const user = await userRes.json();
+
   return (
     <div className={styles.page}>
       <div className={styles.songInfo}>
+        <h1>{song.title}</h1>
+        <h2>{song.artist}</h2>
         <div>
-          <h1>{title}</h1>
-          <h2>{artist}</h2>
+          <span>chord lyrics by</span>
+          <b className={styles.username}> {user.name}</b>
         </div>
       </div>
       <hr />
@@ -53,7 +55,7 @@ export default async function Page({ params }) {
           className={styles.editButton}
           onClick={async () => {
             "use server";
-            redirect(`/songs/writing/${songId}`)
+            redirect(`/songs/writing/${songId}`);
           }}
         >
           <Image src="/edit.png" alt="edit" width={24} height={24} />
