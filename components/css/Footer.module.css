@@ -1,6 +1,6 @@
 .footer {
   width: 100vw;
-  margin-top: 3rem;
+  margin-top: 6rem;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
 }
 
 .footer hr {
-  opacity: .1;
+  opacity: 0;
   width: 90vw;
   margin-bottom: 1rem;
 }

@@ -41,7 +41,6 @@
 
 .lines {
   overflow-x: scroll;
-  min-height: 100vh;
   padding: 0 0.4rem;
 }
 

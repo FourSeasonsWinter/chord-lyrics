@@ -1,12 +1,11 @@
-import styles from "./css/Navbar.module.css";
-import { auth, signOut, signIn } from "@/auth";
-import { montserrat } from "@/app/fonts";
-import Image from "next/image";
-import Link from "next/link";
-import { redirect } from "next/navigation";
+import styles from './css/Navbar.module.css'
+import { auth, signOut, signIn } from '@/auth'
+import { montserrat } from '@/app/fonts'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default async function Navbar() {
-  const session = await auth();
+  const session = await auth()
 
   return (
     <nav className={styles.header}>
@@ -21,8 +20,8 @@ export default async function Navbar() {
       {session && session?.user ? (
         <form
           action={async () => {
-            "use server";
-            redirect(`/profile/${session.id}`)
+            'use server'
+            await signOut()
           }}
         >
           <button className={montserrat.className}>
@@ -38,8 +37,8 @@ export default async function Navbar() {
       ) : (
         <form
           action={async () => {
-            "use server";
-            await signIn("google");
+            'use server'
+            await signIn('google')
           }}
         >
           <button className={montserrat.className} type="submit">
@@ -48,5 +47,5 @@ export default async function Navbar() {
         </form>
       )}
     </nav>
-  );
+  )
 }
