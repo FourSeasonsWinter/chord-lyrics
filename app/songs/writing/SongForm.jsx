@@ -1,76 +1,73 @@
-"use client";
+'use client'
 
-import { useEffect, useState } from "react";
-import LineWrite from "./LineWrite";
-import styles from "./SongForm.module.css";
-import Image from "next/image";
-import { montserrat } from "@/app/fonts";
+import { useEffect, useState } from 'react'
+import LineWrite from './LineWrite'
+import styles from './SongForm.module.css'
+import Image from 'next/image'
+import { montserrat } from '@/app/fonts'
 
 export default function SongForm({ onSongSubmit, songToEdit = undefined }) {
-  const [lines, setLines] = useState([]);
+  const [lines, setLines] = useState([])
   const [details, setDetails] = useState({
-    title: "",
-    artist: "",
-  });
+    title: '',
+    artist: '',
+  })
 
   useEffect(() => {
     if (songToEdit) {
       setDetails({
         title: songToEdit.details.title,
         artist: songToEdit.details.artist,
-      });
+      })
 
       if (songToEdit.lines.length === 0) {
-        setLines([{ chords: "", lyrics: "" }])
-        return;
+        setLines([{ chords: '', lyrics: '' }])
+        return
       }
 
-      let newLines = [];
+      let newLines = []
       for (const line of songToEdit.lines) {
         newLines.push({
           chords: line.chords_text,
           lyrics: line.lyric_text,
-        });
+        })
       }
 
       setLines(newLines)
     } else {
-      setLines([{ chords: "", lyrics: "" }]);
+      setLines([{ chords: '', lyrics: '' }])
     }
-  }, []);
+  }, [])
 
   function addLine() {
-    const lastLine = lines[lines.length - 1];
+    const lastLine = lines[lines.length - 1]
 
-    if (lastLine.chords === "" && lastLine.lyrics === "") return;
+    if (lastLine.chords === '' && lastLine.lyrics === '') return
 
-    setLines([
-      ...lines,
-      { chords: "", lyrics: "" },
-    ]);
+    setLines([...lines, { chords: '', lyrics: '' }])
   }
 
   function handleDetailsChange(event) {
-    const { name, value } = event.target;
-    setDetails({ ...details, [name]: value });
+    const { name, value } = event.target
+    setDetails({ ...details, [name]: value })
   }
 
   function handleChordsChange(index, value) {
-    const updatedLines = [...lines];
-    updatedLines[index].chords = value;
-    setLines(updatedLines);
+    const updatedLines = [...lines]
+    updatedLines[index].chords = value
+    setLines(updatedLines)
   }
 
   function handleLyricsChange(index, value) {
-    const updatedLines = [...lines];
-    updatedLines[index].lyrics = value;
-    setLines(updatedLines);
+    const updatedLines = [...lines]
+    updatedLines[index].lyrics = value
+    setLines(updatedLines)
   }
 
   async function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
 
-    onSongSubmit(details, lines);
+    onSongSubmit(details, lines)
   }
 
   return (
@@ -106,7 +103,7 @@ export default function SongForm({ onSongSubmit, songToEdit = undefined }) {
             onChordsChange={handleChordsChange}
             onLyricsChange={handleLyricsChange}
           />
-        );
+        )
       })}
 
       <button type="button" className={styles.addButton} onClick={addLine}>
@@ -117,5 +114,5 @@ export default function SongForm({ onSongSubmit, songToEdit = undefined }) {
         <Image src="/check.png" alt="Done" width={24} height={24} />
       </button>
     </form>
-  );
+  )
 }

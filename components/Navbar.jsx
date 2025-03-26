@@ -3,6 +3,7 @@ import { auth, signOut, signIn } from "@/auth";
 import { montserrat } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default async function Navbar() {
   const session = await auth();
@@ -21,7 +22,7 @@ export default async function Navbar() {
         <form
           action={async () => {
             "use server";
-            await signOut();
+            redirect(`/profile/${session.id}`)
           }}
         >
           <button className={montserrat.className}>

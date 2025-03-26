@@ -41,3 +41,12 @@ a {
     color-scheme: dark;
   }
 }
+
+@media (min-width: 1025px) {
+  body {
+    max-width: 360px;
+    max-height: 740px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+}

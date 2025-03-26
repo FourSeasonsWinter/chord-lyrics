@@ -19,3 +19,10 @@
 .image {
   border-radius: 50%;
 }
+
+@media (min-width: 1025px) {
+  .header {
+    margin: 0 auto;
+    width: 360px;
+  }
+}
