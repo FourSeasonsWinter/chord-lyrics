@@ -7,8 +7,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     GitHub,
     Google({ authorization: { params: { prompt: "login" } } }),
   ],
+  trustHost: true,
   callbacks: {
-    async signIn({ user, account, profile }) {
+    async signIn({ user, account, profile, url }) {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_USERS_URL}/${profile.id || profile.sub}`,
         { cache: "no-store" }

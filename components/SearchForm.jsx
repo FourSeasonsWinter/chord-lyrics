@@ -14,7 +14,6 @@ export default function SearchForm({ query }) {
           defaultValue={query}
           placeholder="Search for a song or artist..."
           className={montserrat.className}
-          autoComplete={"off"}
         />
 
         {query ? (
