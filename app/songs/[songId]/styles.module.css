@@ -77,3 +77,16 @@
   border: none;
   background: transparent;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page {
+  animation: fadeIn .5s ease-in-out forwards;
+}
