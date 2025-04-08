@@ -1,9 +1,9 @@
-import SignInSection from './SignInSection'
-import PopularSongs from './PopularSongs'
+import SignInSection from './(root)/SignInSection'
+import PopularSongs from './(root)/PopularSongs'
 import { auth } from '@/auth'
 import SearchForm from '@/components/SearchForm'
 import Link from 'next/link'
-import UserSongsSection from './UserSongsSection'
+import UserSongsSection from './(root)/UserSongsSection'
 import { Suspense } from 'react'
 
 export default async function Home() {
@@ -11,8 +11,8 @@ export default async function Home() {
 
   return (
     <>
-      <Link href="/">
-        <h1 className="title">Chord Lyrics</h1>
+      <Link href='/'>
+        <h1 className='title'>Chord Lyrics</h1>
       </Link>
 
       <SearchForm />

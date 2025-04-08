@@ -43,7 +43,7 @@ export default async function Page({ params }) {
           <span className={styles.username}> {user.name}</span>
         </div>
       </div>
-      <hr />
+      <div className={styles.divisor} />
       <div className={styles.lines}>
         {lines.map((line, index) => {
           return (

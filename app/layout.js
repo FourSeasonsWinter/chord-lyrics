@@ -1,5 +1,5 @@
 import { montserrat } from "@/app/fonts";
-import "./globals.css";
+import "./App.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 

@@ -1,14 +1,18 @@
 .card {
+  background-color: rgba(255, 255, 255 .15);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
+  padding: 20px;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+
   display: flex;
   flex-direction: column;
-  gap: .4rem;
-  padding: 1rem;
-  background-color: whitesmoke;
-  color: black;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 4 4px 2px #0aa;
-  max-width: 160px;
 }
 
 .card strong {
@@ -19,7 +23,7 @@
 }
 
 .card span {
-  color: #555;
+  opacity: .5;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

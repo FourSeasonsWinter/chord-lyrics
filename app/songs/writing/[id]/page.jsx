@@ -19,16 +19,14 @@ export default async function Page({ params }) {
   if (song.user_id != session.id) redirect('/')
 
   return (
-    <>
-      <h1 style={{ padding: 0.6 + 'rem', opacity: 0.3 }}>Edit mode</h1>
-      <SongForm
-        onSongSubmit={async (details, lines) => {
-          'use server'
-          await updateSong(details, lines, songId)
-          redirect(`/songs/${songId}`)
-        }}
-        songToEdit={{ details: song, lines: lyrics }}
-      />
-    </>
+    <SongForm
+      onSongSubmit={async (details, lines) => {
+        'use server'
+        await updateSong(details, lines, songId)
+        redirect(`/songs/${songId}`)
+      }}
+      songToEdit={{ details: song, lines: lyrics }}
+      pageTitle='Edit mode'
+    />
   )
 }

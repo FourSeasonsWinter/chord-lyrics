@@ -1,14 +1,14 @@
-"use client";
+'use client'
 
-import { useRouter } from "next/navigation";
-import styles from "./css/SongCard.module.css";
+import { useRouter } from 'next/navigation'
+import styles from './css/SongCard.module.css'
 
 export default function SongCard({ song }) {
-  const router = useRouter();
-  const { id, title, artist } = song;
+  const router = useRouter()
+  const { id, title, artist } = song
 
   function handleRedirect(songId) {
-    router.push(`/songs/${songId}`);
+    router.push(`/songs/${songId}`)
   }
 
   return (
@@ -16,5 +16,5 @@ export default function SongCard({ song }) {
       <strong>{title}</strong>
       <span>{artist}</span>
     </div>
-  );
+  )
 }

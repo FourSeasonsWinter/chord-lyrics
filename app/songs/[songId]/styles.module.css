@@ -33,10 +33,25 @@
   opacity: 1;
 }
 
-.page hr {
+.divisor {
   margin: 2rem .6rem;
   margin-top: .2rem;
-  opacity: .2;
+  height: 2px;
+  background: linear-gradient(to right, var(--orange), var(--purple), var(--cyan), var(--blue));
+  background-size: 300% auto;
+  animation: gradient-animation 10s ease-in-out infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .lines {
